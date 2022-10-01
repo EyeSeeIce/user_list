@@ -1,0 +1,19 @@
+.divider {
+  position: relative;
+  width: 100%;
+  border-bottom: 1px solid var(--clr-divider);
+  height: 20px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  &_label {
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 14px;
+    line-height: 14px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--white);
+  }
+}

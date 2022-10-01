@@ -1,0 +1,35 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 10px;
+  padding-right: 10px;
+
+  background: var(--clr-button-bg-pasive);
+  border: 1px solid var(--clr-button-border-pasive);
+  border-radius: 4px;
+
+  transition: 0.15s;
+
+  &_circle {
+    min-width: 50px;
+    min-height: 50px;
+    padding: 0;
+    border-radius: 50%;
+  }
+
+  &:hover {
+    background-color: var(--clr-button-bg-hover);
+    border-color: var(--clr-button-border-hover);
+    color: var(--white);
+
+    svg {
+      fill: var(--white);
+    }
+  }
+
+  &:active {
+    background-color: var(--clr-button-bg-active);
+    border-color: var(--clr-button-border-active);
+  }
+}

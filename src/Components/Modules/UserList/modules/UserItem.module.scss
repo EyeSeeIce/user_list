@@ -1,0 +1,53 @@
+@use './src/assets/styles/varibles/breackboints' as *;
+@use './src/assets/styles/mixins' as *;
+
+.item {
+  position: relative;
+  padding: 20px;
+  box-shadow: 1px 1px 4px 0 var(--clr-user-shadow);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.1s;
+
+  &_loading {
+    position: relative;
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      z-index: 5;
+      backdrop-filter: blur(2px);
+    }
+  }
+
+  &:hover {
+    box-shadow: inset -1px -1px 5px 0 var(--clr-user-shadow-hover);
+  }
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+.actionPanel {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+
+  &_remove {
+    position: relative;
+    z-index: 5;
+  }
+}
+
+.link {
+  position: absolute;
+  z-index: 4;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  right: 0;
+}
