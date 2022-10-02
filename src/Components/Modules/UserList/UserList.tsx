@@ -15,7 +15,7 @@ const UserList = () => {
 
   return (
     <div className={styles.wrapper}>
-      <Skeleton loading={loading} count={10} >
+      <Skeleton loading={loading} count={10}>
         {users.map(u => (
           <UserItem key={u.id} removeUser={removeUser} highlighter={search} {...u} />
         ))}
