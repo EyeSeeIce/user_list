@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useLayoutEffect, useState } from 'react'
 
 const useWindowSize = () => {
   const [currentSize, setCurrentSize] = useState<number>(768)
-  useEffect(() => {
+  useLayoutEffect(() => {
     function handleResize() {
       setCurrentSize(window.innerWidth)
     }
