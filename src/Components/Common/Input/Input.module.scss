@@ -25,6 +25,7 @@
 
 .label {
   position: absolute;
+  pointer-events: none;
   margin-left: 10px;
   background: var(--white);
   transform: translateY(50%);
