@@ -3,10 +3,11 @@ import { useAppDispatch, useAppSelector } from 'src/store/store'
 import { UserItem } from './modules'
 import { useCallback } from 'react'
 import { asyncDeleteUser } from 'src/store/slices/userSlice'
+import { Skeleton } from 'src/Components/Common/Skeleton'
 
 const UserList = () => {
   const dispatch = useAppDispatch()
-  const { users, search } = useAppSelector(state => state.users)
+  const { users, search, loading } = useAppSelector(state => state.users)
 
   const removeUser = useCallback<(id: number) => void>(id => {
     dispatch(asyncDeleteUser(id))
@@ -14,9 +15,11 @@ const UserList = () => {
 
   return (
     <div className={styles.wrapper}>
-      {users.map(u => (
-        <UserItem key={u.id} removeUser={removeUser} highlighter={search} {...u} />
-      ))}
+      <Skeleton loading={loading} count={10} >
+        {users.map(u => (
+          <UserItem key={u.id} removeUser={removeUser} highlighter={search} {...u} />
+        ))}
+      </Skeleton>
     </div>
   )
 }

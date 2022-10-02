@@ -1,0 +1,27 @@
+.skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 300px;
+  min-height: 200px;
+  border: 1px solid var(--clr-skeleton-border);
+  border-radius: 10px;
+  padding: 20px;
+
+  p {
+    color: transparent;
+    background: var(--clr-skeleton-item-bg);
+    border-radius: 5px;
+    animation: skeleton 1s linear infinite alternate;
+  }
+}
+
+
+@keyframes skeleton {
+  0% {
+    background-color: #C2CFD6FF;
+  }
+  100% {
+    background-color: #F0F3F5FF;
+  }
+}
